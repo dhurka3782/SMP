@@ -1,0 +1,640 @@
+/* Basic styles header */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Georgia', serif;
+}
+
+body {
+    background: url("bg.png"); /* Path to your background image */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center center; /* Centers the image */
+    background-attachment: fixed; /* Keeps the background fixed during scroll */
+    background-blend-mode: overlay; /* Blends the gradient and image */
+    line-height: 1.6;
+}
+
+header {
+    background-color: #0c4c6f;
+    color: #0c4c6f;
+    padding: 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,255);
+    position: relative;
+    z-index: 10;
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+.logo img {
+    max-height: 80px; /* Adjust the height as needed */
+    margin-right: 1px; /* Adjust spacing between logo and text */
+}
+.company-name {
+    font-size: 1.5em; /* Adjust the font size as needed */
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Navigation styling */
+nav {
+    display: flex;
+    align-items: center;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+nav ul li {
+    position: relative;
+}
+
+/* Styles for navigation links within the header */
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 20px;
+    display: inline-block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    background: #0c4c6f;
+    border-radius: 30px; /* Oval shape */
+    vertical-align: bottom; 
+}
+
+header nav ul li a:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,255);
+    background: linear-gradient(to right, #138086,#000000, #077aa8); /* Different gradient on hover */
+}
+/* Navigation toggle button for small screens */
+.nav-toggle {
+    display: none; /* Hide the toggle button by default */
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: #fff;
+    cursor: pointer;
+}
+/* Media query for responsive design */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block; /* Show the toggle button on small screens */
+    }    
+    nav ul {
+        flex-direction: column;
+        display: none;
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    nav ul.show {
+        display: flex;
+        max-height: 500px; /* Adjust as needed */
+    }  
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+a:hover {
+    text-decoration: none;
+}
+footer {
+    background-color: #0c4c6f;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+/* Centered content styles home */
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: none;
+}
+main.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; /* Adjust height as needed */
+    text-align: center;
+    opacity: 0;
+    transform: scale(0.95); /* Start slightly smaller */
+    animation: scaleFadeIn 1.5s forwards;
+}
+
+@keyframes scaleFadeIn {
+    to {
+        opacity: 1;
+        transform: scale(1); /* Grow to its original size */
+    }
+}
+
+.centered-content h1 {
+    font-size: 3.0em;
+    background-image: linear-gradient(45deg, #a81d42, #e2e7ec);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 40px;
+    font-family: 'Merriweather', serif; 
+    opacity: 0;
+    transform: scale(0.95); /* Start slightly smaller */
+    animation: scaleFadeIn 1.5s forwards 0.5s; /* Delay to create a staggered effect */
+    text-align: right; /* Align text to the right */
+    padding-left: 50px; /* Move the text to the right */
+}
+
+.centered-content p {
+    font-size: 1.8em;
+    color: #e0dbdb;
+    margin-bottom: 100px;
+    text-decoration-thickness: 8px;
+    text-shadow: 0 0 2px rgb(15, 16, 15);
+    opacity: 0;
+    font-family: 'Georgia', serif; 
+    transform: scale(0.95); 
+    animation: scaleFadeIn 1.5s forwards 1s; 
+}
+
+
+/* Centering the login form login */
+body, html {
+    height: 50%;
+    margin: 0;
+}
+
+.form-login {
+    width: 400px; /* Adjust width as needed */
+    padding: 30px;
+    position: relative;
+    top: 50px; 
+    left:10px; 
+    background: rgba(249, 242, 242, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    opacity:1;
+}
+
+/* Adjust input box styling */
+.form-login {
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+}
+.input-box {
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.input-box img {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    pointer-events: none;
+}
+.input-box {
+    margin-bottom: 15px;
+    text-align: left;
+}
+.input-box label {
+    position: absolute;
+    pointer-events: none;
+    justify-content: space-between;
+    left: 40px; /* Adjusted for icon width */
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+    color: #033255; /* Placeholder color */
+}
+
+.input-box input {
+    width: 100%; /* Full width */
+    padding: 15px 15px 15px 50px; /* Padding on the left for the image */
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.input-box input:focus {
+    border-color: #555; /* Border color on focus */
+}
+
+.input-box input:focus + label,
+.input-box input:not(:placeholder-shown) + label {
+    bottom: 5px;
+    font-size: 0.8em;
+    color: #333; /* Text color */
+}
+
+/* Remember me checkbox styling */
+.remember-me {
+    display: flex;
+    color: #e4dfdf;
+    align-items: center;
+    margin-bottom: 20px; /* Space between remember me and login button */
+}
+
+.remember-me input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #021136;
+    color: #fff;
+    border: 2px;
+    border-radius: 6px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #031e46;
+}
+
+/* Forgot password link styling */
+.forgot-password {
+    display: block;
+    text-align: right;
+    font-size: 0.9em;
+    color: #efeef6;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* Main content styles  welcome page */
+main.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; /* Adjust height as needed */
+    text-align: center;
+    opacity: 0;
+    transform: scale(0.95); /* Start slightly smaller */
+    animation: scaleFadeIn 1.5s forwards;
+}
+.welcome-section {
+   text-align: center;
+   padding: 50px 0;
+}
+
+.container {
+   max-width: 600px;
+   margin: 0 auto;
+}
+
+.welcome-section h2 {
+   font-size: 3.0em;
+   background-image: linear-gradient(45deg, #790783, #e8e3df);
+   -webkit-background-clip: text;
+   background-clip: text;
+   color: transparent;
+   margin-bottom: 50px;
+   font-family: 'Merriweather', serif; /* Change font family */
+   opacity: 2;
+   transform: scale(0.95); /* Start slightly smaller */
+   animation: scaleFadeIn 1.5s forwards 0.5s; /* Delay to create a staggered effect */
+   text-align: right; /* Align text to the right */
+   padding-left: 50px; /* Move the text to the right */
+}
+.welcome-section p {
+   font-size: 1.8em;
+   color: #e7ebee;
+   text-decoration-thickness:8px;
+   text-shadow: 0 0 8px rgb(15, 16, 15);
+   margin-bottom: 20px;
+}
+
+.login-button {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: #1a5b7e;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: rgba(68, 5, 5, 0.1);
+}
+
+/* Main content container protected-home  */
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Welcome message styling */
+.welcome-message {
+    margin-bottom: 30px;
+}
+
+.welcome-message h1 {
+    font-size: 2.5em;
+    background-image: linear-gradient(45deg, #767d3b, #e8e3df);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 50px;
+    font-family: 'Merriweather', serif; /* Change font family */
+    opacity: 2;
+    transform: scale(0.95); /* Start slightly smaller */
+    animation: scaleFadeIn 1.5s forwards 0.5s; /* Delay to create a staggered effect */
+    text-align: center;
+ }
+
+/* Dashboard links styling */
+.dashboard-links {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    gap: 20px;
+}
+
+.dashboard-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    background-color:rgba(8, 166, 166, 0.7); /* Semi-transparent cyan */
+    border-radius: 10px;
+    padding: 6px;
+    width: 300px; /* Adjust width as needed */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dashboard-link:hover {
+    color: #fff; /* Change to your desired color */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.icon-container {
+    margin-right: 20px;
+}
+
+.icon-container img {
+    width: 50px;
+    height: 50px;
+    margin: 5px 0; 
+}
+
+
+.dashboard-link span {
+    font-size: 1.2em;
+    color: #5e0101;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .dashboard-link {
+        width: 100%;
+        justify-content: center;
+    }
+}
+/* holiday  */
+.content h1 {
+   font-size: 3.0em;
+   background-image: linear-gradient(45deg, #0a0c59, #e8e3df);
+   -webkit-background-clip: text;
+   background-clip: text;
+   color: transparent;
+   margin-bottom: 10px;
+   font-family: 'Merriweather', serif; /* Change font family */
+   opacity: 2;
+   transform: scale(0.95); /* Start slightly smaller */
+   animation: scaleFadeIn 1.5s forwards 0.5s; /* Delay to create a staggered effect */
+   text-align:l; 
+}
+
+.content p {
+    color: #319b82;
+    text-align: center; /* Center-align the heading */
+    margin-bottom: 20px;
+}
+
+table {
+    width: 50%;
+    color: #222656; /* Darker text color for better readability */
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-left: auto;  /* Center the table horizontally */
+    margin-right: auto; /* Center the table horizontally */
+    text-align: center; /* Center-align table content */
+    font-family: 'Arial', sans-serif; /* Professional font */
+    background-color: #699796; /* Light background color for the table */
+}
+
+table th, table td {
+    border: 1px solid #420244;
+    padding: 5px;
+    text-align: left;
+    font-size: 14px;
+}
+
+table th {
+    background-color: #56608d; /* Header background color */
+    color: #ffffff; /* White text for contrast */
+    font-weight: bold;
+}
+
+table td {
+    color: #280202;
+}
+
+table tr:nth-child(even) {
+    background-color: #31799f;
+}
+table tr:nth-child(odd) {
+    background-color: #ffffff; /* White background for odd rows */
+}
+
+table tr:hover {
+    background-color: #426d74;
+}
+/* profile */
+.profile-form {
+    width: 400px; /* Adjust width as needed */
+    padding: 30px;
+    position: relative;
+    top: 50px; 
+    left:190px; 
+    background: rgba(249, 242, 242, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.welcome-txt h1 {
+    font-size: 3.0em;
+    background-image: linear-gradient(45deg, #184b88, #fff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 20px;
+    font-family: 'Merriweather', serif; /* Change font family */
+    opacity: 2;
+    transform: scale(0.95); /* Start slightly smaller */
+    animation: scaleFadeIn 1.5s forwards 0.5s; /* Delay to create a staggered effect */
+    text-align:center; /* Align text to the right */
+    padding-left: 50px; /* Move the text to the right */
+ }
+.welcome-txt p {
+    color: #d0ad72;
+    text-decoration-thickness:8px;
+    text-align: center; /* Center-align the heading */
+    font-size: 1.2em;
+    text-shadow: 0 0 5px rgb(15, 16, 15);
+}
+.welcome-txt form {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-input-box {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.profile-input-box label {
+    position: absolute;
+    pointer-events: none;
+    left: 40px; 
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+    color: #033255; /* Placeholder color */
+}
+
+.profile-input-box input,
+.profile-input-box select {
+    width: 100%; /* Full width */
+    padding: 15px 15px 15px 50px; /* Padding on the left for the image */
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.profile-form button {
+    padding: 10px 20px;
+    background: #0c4c6f;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.profile-form button:hover {
+    background-color: #319bd4;
+}
+/* account */
+.wel-txt {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.wel-txt h1 {
+    font-size: 3.0em;
+    background-image: linear-gradient(45deg, #261566, #e8e3df);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 20px;
+    font-family: 'Merriweather', serif; /* Change font family */
+    opacity: 2;
+    transform: scale(0.95); /* Start slightly smaller */
+    animation: scaleFadeIn 1.5s forwards 0.5s; /* Delay to create a staggered effect */
+    text-align:center; /* Align text to the right */
+    padding-left: 50px; /* Move the text to the right */
+ }
+.wel-txt p {
+    color: #278069;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.account-form {
+    width: 400px; /* Adjust width as needed */
+    padding: 30px;
+    position: relative;
+    top: 50px; 
+    left:190px; 
+    background: rgba(249, 242, 242, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.account-input-box {
+    margin-bottom: 20px;
+}
+
+.account-input-box label {
+    display: block;
+    margin-bottom: 10px;
+    color: #f6f5f5;
+}
+
+.account-input-box input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #0c4c6f;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #319bd4;
+}
